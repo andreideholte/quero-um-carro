@@ -1,3 +1,5 @@
+print('Start Script MONGO INIT ###########################################################');
+
 db = db.getSiblingDB('quc_db');
 
 db.createCollection('veiculo');
@@ -30,3 +32,5 @@ db.veiculo.insertMany([
     imagem: 'https://www.landrover.com.br/sdlmedia/637329105877167115CF.jpg'
   }  
 ]);
+
+print('Stop Script MONGO INIT ############################################################');

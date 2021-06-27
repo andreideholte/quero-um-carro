@@ -1,6 +1,5 @@
 package com.desafio.api.quc.document;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -13,7 +12,7 @@ import lombok.Data;
 @Data
 @Document(collection = "reserva")
 @AllArgsConstructor
-public class Reserva implements Serializable {
+public class Reserva {
 
     @Id
     private String id;
@@ -23,7 +22,7 @@ public class Reserva implements Serializable {
     private LocalDateTime dataFim;
 
     public boolean periodoReservaValido() {
-        return dataFim.isBefore(dataInicio);
+        return dataFim.isAfter(dataInicio);
     }
 
     public boolean quantidadeDiasReservaValido() {

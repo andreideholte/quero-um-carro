@@ -66,13 +66,23 @@ public class ReservaServiceImplTest {
 
     @Test
     void reservaParaUsuarioInvalido() {
-        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(this.getReservasMock().get(1)));
+        when(reservaRepository.findCustomByUsuarioIdAndPeriodo(
+            Mockito.any(String.class), 
+            Mockito.any(LocalDateTime.class), 
+            Mockito.any(LocalDateTime.class))).thenReturn(this.getReservasMock());
+
+        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(this.getReservasMock().get(2)));
         assertEquals("Este usuario ja possui uma reserva de algum veiculo no periodo informado.", exception.getMessage());
     }
 
     @Test
     void reservaParaVeiculoInvalido() {
-        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(this.getReservasMock().get(1)));
+        when(reservaRepository.findCustomByVeiculoIdAndPeriodo(
+            Mockito.any(String.class), 
+            Mockito.any(LocalDateTime.class), 
+            Mockito.any(LocalDateTime.class))).thenReturn(this.getReservasMock());
+
+        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(this.getReservasMock().get(2)));
         assertEquals("O veiculo escolhido ja esta reservado para um usuario no periodo informado.", exception.getMessage());
     }
 
@@ -80,7 +90,7 @@ public class ReservaServiceImplTest {
     public void reservaValida() throws BusinessException {
         Reserva novaReserva = this.getReservasMock().get(2);
         novaReserva.setId("8s9dasdans8dna8sdn");
-        
+
         when(reservaRepository.save(Mockito.any(Reserva.class)))
                 .thenReturn(novaReserva);
                 

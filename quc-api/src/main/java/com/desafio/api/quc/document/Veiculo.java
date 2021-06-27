@@ -1,7 +1,5 @@
 package com.desafio.api.quc.document;
 
-import java.io.Serializable;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +9,7 @@ import lombok.Data;
 @Data
 @Document(collection = "veiculo")
 @AllArgsConstructor
-public class Veiculo implements Serializable {
+public class Veiculo {
 
     @Id
     private String id;

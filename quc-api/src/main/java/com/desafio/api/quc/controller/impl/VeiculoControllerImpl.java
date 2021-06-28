@@ -42,16 +42,4 @@ public class VeiculoControllerImpl implements VeiculoController {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Veiculo> atualizar(Veiculo veiculo) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void deletar(Veiculo veiculo) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }

@@ -31,13 +31,13 @@ public class ReservaServiceImpl implements ReservaService {
      */
     @Override
     public Reserva criar(Reserva reserva) throws BusinessException {
-        LOGGER.info("[RESERVA-SERVICE-IMPL][Criar] Iniciando Processo de criar uma reserva. Reserva [{}]", reserva);
+        LOGGER.debug("[RESERVA-SERVICE-IMPL][Criar] Iniciando Processo de criar uma reserva. Reserva [{}]", reserva);
 
         this.validarReserva(reserva);
 
         reserva = reservaRepository.save(reserva);
 
-        LOGGER.info("[RESERVA-SERVICE-IMPL][Criar] Finalizado Processo de criar uma reserva. Reserva Criada [{}]", reserva);
+        LOGGER.debug("[RESERVA-SERVICE-IMPL][Criar] Finalizado Processo de criar uma reserva. Reserva Criada [{}]", reserva);
         
         return reserva;
     }

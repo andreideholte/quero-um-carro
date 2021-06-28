@@ -1,0 +1,22 @@
+<Configuration monitorInterval="60">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" follow="true"> 
+			<PatternLayout>
+				<pattern>
+					[%d] %p - %m %n
+				</pattern>
+			</PatternLayout>		
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+		</Root>
+		<Logger name="org.springframework" level="error" additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<Logger name="com.desafio.api" level="trace" additivity="false">
+			<AppenderRef ref="Console"/>
+		</Logger>
+	</Loggers>
+</Configuration>

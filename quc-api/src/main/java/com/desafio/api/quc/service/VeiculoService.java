@@ -9,7 +9,5 @@ public interface VeiculoService {
     List<Veiculo> listarTodos();
     Veiculo criar(final Veiculo veiculo);
     Veiculo buscarPorId(final String id);
-    Veiculo atualizar(Veiculo veiculo);
-    void deletar(final Veiculo veiculo);
 
 }

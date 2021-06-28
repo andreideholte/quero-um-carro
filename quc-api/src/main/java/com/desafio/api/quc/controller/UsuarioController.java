@@ -14,6 +14,4 @@ public interface UsuarioController {
 
     ResponseEntity<Usuario> atualizar(@RequestBody Usuario usuario);
 
-    void deletar(@RequestBody final Usuario usuario);
-
 }

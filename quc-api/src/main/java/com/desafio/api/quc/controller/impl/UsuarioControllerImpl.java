@@ -45,13 +45,6 @@ public class UsuarioControllerImpl implements UsuarioController {
 		return null;
 	}
 
-	@Override
-	@ApiOperation(value = "Deletar um usuario")
-	public void deletar(Usuario usuario) {
-		// TODO Auto-generated method stub
-		
-	}
-
   /*   @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Person get(@PathVariable(value = "email") String email){

@@ -12,6 +12,5 @@ public interface VeiculoController {
     ResponseEntity<VeiculosCollection> listarTodos();
     ResponseEntity<Veiculo> criar(@RequestBody final Veiculo veiculo);
     ResponseEntity<Veiculo> buscarPorId(@RequestParam("id") final String idVeiculo);
-    ResponseEntity<Veiculo> atualizar(@RequestBody Veiculo veiculo);
-    void deletar(@RequestBody final Veiculo veiculo);
+
 }

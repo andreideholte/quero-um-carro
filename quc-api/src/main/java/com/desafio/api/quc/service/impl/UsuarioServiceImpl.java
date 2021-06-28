@@ -25,11 +25,11 @@ public class UsuarioServiceImpl implements UsuarioService {
      */
     @Override
     public Usuario criar(Usuario usuario) {
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Criar] Iniciando Processo de criar usuario. Usuario [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][Criar] Iniciando Processo de criar usuario. Usuario [{}]", usuario);
 
         usuario = usuarioRepository.save(usuario);
 
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Criar] Finalizado Processo de criar usuario. Usuario Criado [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][Criar] Finalizado Processo de criar usuario. Usuario Criado [{}]", usuario);
         
         return usuario;
     }
@@ -42,11 +42,11 @@ public class UsuarioServiceImpl implements UsuarioService {
      */
     @Override
     public Usuario buscarPorEmail(String email) {
-        LOGGER.info("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Iniciando Processo de buscar usuario por email. Email [{}]", email);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Iniciando Processo de buscar usuario por email. Email [{}]", email);
 
         Usuario usuario = usuarioRepository.findByEmail(email);
 
-        LOGGER.info("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Finalizado Processo de buscar usuario por email. Usuario [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Finalizado Processo de buscar usuario por email. Usuario [{}]", usuario);
 
         return usuario;
     }
@@ -59,27 +59,13 @@ public class UsuarioServiceImpl implements UsuarioService {
      */
     @Override
     public Usuario atualizar(Usuario usuario) {
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Atualizar] Iniciando Processo de atualizar usuario. Usuario [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][Atualizar] Iniciando Processo de atualizar usuario. Usuario [{}]", usuario);
 
         usuario = usuarioRepository.save(usuario);
 
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Atualizar] Finalizado Processo de atualizar usuario. Usuario Atualizado [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][Atualizar] Finalizado Processo de atualizar usuario. Usuario Atualizado [{}]", usuario);
 
         return usuario;
-    }
-    
-    /** 
-     * Deleta um usuario da base de dados.
-     * 
-     * @param usuario a ser deletado contendo ao menos o identificador.
-     */
-    @Override
-    public void deletar(Usuario usuario) {
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Deletar] Iniciando Processo de deletar usuario. Usuario [{}]", usuario);
-
-        usuarioRepository.delete(usuario);
-
-        LOGGER.info("[USUARIO-SERVICE-IMPL][Deletar] Finalizado Processo de deletar usuario.");
     }
 
 }

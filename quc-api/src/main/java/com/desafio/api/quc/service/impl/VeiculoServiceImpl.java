@@ -25,11 +25,11 @@ public class VeiculoServiceImpl implements VeiculoService {
      * @return List<Veiculo> encontrados na base de dados no momento da consulta.
      */
     public List<Veiculo> listarTodos() {
-        LOGGER.debug("[VEICULO-SERVICE-IMPL][Criar] Iniciando Processo listar todos os veiculos.");
+        LOGGER.debug("[VEICULO-SERVICE-IMPL][ListarTodos] Iniciando Processo listar todos os veiculos.");
 
         List<Veiculo> veiculos = veiculoRepository.findAll();
 
-        LOGGER.debug("[VEICULO-SERVICE-IMPL][Criar] Finalizado Processo de listar todos os veiculos.");
+        LOGGER.debug("[VEICULO-SERVICE-IMPL][ListarTodos] Finalizado Processo de listar todos os veiculos.");
 
         return veiculos;
     }
@@ -59,10 +59,10 @@ public class VeiculoServiceImpl implements VeiculoService {
      * @return Veiculo encontrado na consulta que corresponde ao id informado.
      */
     @Override
-    public Veiculo buscarPorId(String id) {
-        LOGGER.debug("[VEICULO-SERVICE-IMPL][BuscarPorId] Iniciando Processo de buscar veiculo por id. Id [{}]", id);
+    public Veiculo buscarPorId(String idVeiculo) {
+        LOGGER.debug("[VEICULO-SERVICE-IMPL][BuscarPorId] Iniciando Processo de buscar veiculo por id. Id [{}]", idVeiculo);
 
-        Veiculo veiculo = veiculoRepository.findById(id).orElse(null);
+        Veiculo veiculo = veiculoRepository.findById(idVeiculo).orElse(null);
 
         LOGGER.debug("[VEICULO-SERVICE-IMPL][BuscarPorId] Finalizado Processo de buscar veiculo por id. Veiculo [{}]", veiculo);
 

@@ -46,7 +46,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
         Usuario usuario = usuarioRepository.findByEmail(email);
 
-        LOGGER.debug("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Finalizado Processo de buscar usuario por email. Usuario [{}]", usuario);
+        LOGGER.debug("[USUARIO-SERVICE-IMPL][BuscarPorEmail] Finalizado Processo de buscar usuario por email. Usuario Encontrado [{}]", usuario);
 
         return usuario;
     }

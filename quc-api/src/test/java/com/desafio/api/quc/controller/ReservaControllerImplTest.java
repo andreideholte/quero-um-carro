@@ -46,7 +46,7 @@ public class ReservaControllerImplTest {
     private ObjectMapper mapper;
     
     @Test
-    void reservaValidaResponse200() throws Exception {
+    void reservaValidaResponse201() throws Exception {
         Reserva newReserva = Util.getReservasMock().get(2);
 
         when(reservaRepository.save(Mockito.any(Reserva.class)))
@@ -54,11 +54,11 @@ public class ReservaControllerImplTest {
 
         String reservaJson = mapper.writeValueAsString(newReserva);
         mockMvc.perform(MockMvcRequestBuilders.post("/reserva").contentType(MediaType.APPLICATION_JSON).content(reservaJson))
-            .andExpect(MockMvcResultMatchers.status().isOk());
+            .andExpect(MockMvcResultMatchers.status().isCreated());
     }
 
     @Test
-    void reservaValidaResponse400Message() throws Exception {
+    void reservaValidaResponse400() throws Exception {
         Reserva newReserva = Util.getReservasMock().get(1);
         
         when(reservaRepository.save(Mockito.any(Reserva.class)))

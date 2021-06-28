@@ -57,7 +57,7 @@ public class ReservaServiceImplTest {
             Mockito.any(LocalDateTime.class), 
             Mockito.any(LocalDateTime.class))).thenReturn(Util.getReservasMock());
 
-        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(Util.getReservasMock().get(2)));
+        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(Util.getReservasMock().get(3)));
         assertEquals("Este usuario ja possui uma reserva de algum veiculo no periodo informado.", exception.getMessage());
     }
 
@@ -68,7 +68,7 @@ public class ReservaServiceImplTest {
             Mockito.any(LocalDateTime.class), 
             Mockito.any(LocalDateTime.class))).thenReturn(Util.getReservasMock());
 
-        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(Util.getReservasMock().get(2)));
+        Throwable exception = assertThrows(BusinessException.class, () -> reservaService.criar(Util.getReservasMock().get(3)));
         assertEquals("O veiculo escolhido ja esta reservado para um usuario no periodo informado.", exception.getMessage());
     }
 

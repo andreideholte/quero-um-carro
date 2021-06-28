@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
@@ -52,7 +51,7 @@ public class ReservaControllerImpl implements ReservaController {
     public ResponseEntity<String> erroInterno(WebRequest webRequest, Exception exception) {
         LOGGER.error("[RESERVA-CONTROLLER-IMPL][Criar] Erro na criacao da reserva.");
         LOGGER.error(exception);
-        
+
         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

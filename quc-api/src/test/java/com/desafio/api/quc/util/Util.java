@@ -26,16 +26,29 @@ public class Util {
                         getRandomVeiculo(), 
                         getRandomUsuario(), 
                         LocalDateTime.now(),
+                        LocalDateTime.now().plusWeeks(2L)),
+                new Reserva(null, 
+                        getRandomVeiculo(true), 
+                        getRandomUsuario(true), 
+                        LocalDateTime.now(),
                         LocalDateTime.now().plusWeeks(2L))
             );
     }
 
     protected static Usuario getRandomUsuario() {
-        return new Usuario(null, "teste01@teste.com", "Teste 01");
+        return getRandomUsuario(false);
+    }
+
+    protected static Usuario getRandomUsuario(boolean useId) {
+        return new Usuario((useId) ? "90askksd887a8s7d8agsg8a87" : null, "teste01@teste.com", "Teste 01");
     }
 
     protected static Veiculo getRandomVeiculo() {
-        return new Veiculo(null, "Wolksvagem", "Gol", "1999", "vermelho", "180393", getImagemVeiculo());
+        return getRandomVeiculo(false);
+    }
+
+    protected static Veiculo getRandomVeiculo(boolean useId) {
+        return new Veiculo((useId) ? "lls89zzz09a09sdjs911" : null, "Wolksvagem", "Gol", "1999", "vermelho", "180393", getImagemVeiculo());
     }
 
     protected static String getImagemVeiculo() {

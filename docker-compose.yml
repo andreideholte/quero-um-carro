@@ -24,8 +24,6 @@ services:
       - ME_CONFIG_MONGODB_SERVER=mongo
       - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       - ME_CONFIG_MONGODB_ADMINPASSWORD=example
-    links:
-      - mongo
 
   quc-api:
     build: quc-api/.

@@ -41,7 +41,7 @@ docker-compose -f docker-compose.yml -d --build
 
 ## Webapp
 
-O projeto será exposto na url: http://localhost:4200/login
+O projeto será exposto na url: http://localhost:23000/login
 
 ## API
 

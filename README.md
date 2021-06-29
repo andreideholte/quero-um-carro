@@ -5,7 +5,7 @@
 <br>
 </p>
 
-<p align="center">QueroUmCarro [QUC] é um sistema de aluguel de carros usado como exemplo para implementação da stack angular, springboot e mongodb utilizando swagger, javadoc, logs teste integrados e teste unitários.</p>
+<p align="center">QueroUmCarro [QUC] é um sistema de aluguel de carros, usado como exemplo para implementação da stack angular, springboot e mongodb utilizando swagger, javadoc, logs teste integrados e teste unitários.</p>
 
 <hr>
 

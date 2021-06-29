@@ -32,19 +32,24 @@ export class ApiService {
       return this.http.get<any>(`${URL_API}/auth/login`, options);
     }
 
-    saveMidia(midia: any) {
-        console.log('midia: ', midia);
-        let midias = JSON.parse((localStorage.getItem('midias') as string));
-        console.log('midias: ', midias);
+    criarReserva(reserva: Reserva) {
+      let options = {
+        headers: httpHeaders,
+        observe: 'body' as 'body',
+        responseType: 'json' as 'json'
+      };
 
-        if (!midias || midias?.length  < 1) {
-            midias = [];
-        }
+      return this.http.post<Reserva>(`${URL_API}/reserva`, reserva, options);
+    }
 
-        midias.push(midia);
+    buscarVeiculo(idVeiculo: string): Observable<Veiculo> {
+      let options = {
+        headers: httpHeaders,
+        observe: 'body' as 'body',
+        responseType: 'json' as 'json'
+      };
 
-        localStorage.removeItem('midias');
-        localStorage.setItem('midias', JSON.stringify(midias));
+      return this.http.get<Veiculo>(`${URL_API}/veiculo/${idVeiculo}`, options);
     }
 
     listarVeiculos(): Observable<Veiculos> {
@@ -59,13 +64,29 @@ export class ApiService {
 }
 
 export interface Veiculos {
-  veiculos: [{
-    id: string;
-    marca: string;
-    modelo: string;
-    ano: string;
-    cor: string;
-    quilometragem: string;
-    imagem: string;
-  }]
+  veiculos: [Veiculo]
+}
+
+export interface Veiculo {
+  id: string;
+  marca: string;
+  modelo: string;
+  ano: string;
+  cor: string;
+  quilometragem: string;
+  imagem: string;
+}
+
+export interface Reserva {
+  dataInicio: string;
+  dataFim: string;
+  veiculo: Veiculo;
+  usuario: Usuario;
+}
+
+
+export interface Usuario {
+  id: string;
+  email: string;
+  nome: string;
 }

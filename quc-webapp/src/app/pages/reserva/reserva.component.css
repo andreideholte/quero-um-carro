@@ -1,6 +1,10 @@
 :host {
     display: unset!important;
 }
+.card-no-border {
+  border-radius: .25rem;
+  position: relative;
+}
 
 .title-breadcrumb {
     font-size: 16px;
@@ -33,85 +37,12 @@
     align-items: center;
 }
 
-.circle {
-    position: absolute;
-    width: 115px;
-    height: 115px;
-    background: var(--secondary);
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 3px 5px 0 rgb(47 85 212 / 30%);
-    color: var(--white);
-    font-size: 60px;
-    line-height: 115px;
-} 
-
-.example-margin {
-    margin: 0 10px;
+.reserva-btn {
+  background: rgb(34,24,55);
+  background: linear-gradient(155deg, rgba(34,24,55,1) 50%, rgba(119,37,61,1) 93%, rgba(110,24,32,1) 100%);
+  padding: 8px 20px;
+  width: 80%;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0 35px 0 17px;
 }
-
-.example-section {
-    cursor: pointer !important;
-}
-
-ul {
-    padding-inline-start: 0px;
-}
-
-ul.task-items li.item {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    margin-bottom: 15px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
-    font-weight: 400;
-}
-
-ul.task-items li.item .nome {
-    display: flex;
-    align-items: center;
-    width: 240px;
-}
-
-ul.task-items li.item .nome .icon {
-    width: 50px;
-    height: 50px;
-    font-size: 35px;
-    line-height: 50px;
-    text-align: center;
-}
-
-ul.task-items li.item .nome .text {
-    margin-left: 20px;
-    height: 25px;
-    border-radius: 15px;
-}
-
-ul.task-items li.item .code {
-    display: flex;
-    align-items: center;
-    font-size: 1em;
-    color: #2e7d32;
-    width: 145px;
-    margin-left: 30px;
-}
-
-ul.task-items li.item .code .icon {
-    background: #2e7d32;
-    margin-right: 10px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-}
-
-ul.task-items li.item .code .icon.on {
-    background: #2e7d32;
-}
-
-ul.task-items li.item .duracao, 
-ul.task-items li.item .tipo, 
-ul.task-items li.item .tags {
-    width: 144.5px;
-  }

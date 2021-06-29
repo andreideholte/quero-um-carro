@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../shared/api.service';
+import { ApiService, Usuario } from '../shared/api.service';
 
 @Component({
   selector: 'app-login',
@@ -161,10 +161,4 @@ export class LoginComponent {
         });
     }
   }
-}
-
-export interface Usuario {
-  id: string;
-  email: string;
-  nome: string;
 }

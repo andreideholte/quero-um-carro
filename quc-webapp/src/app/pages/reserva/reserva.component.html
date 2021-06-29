@@ -1,10 +1,56 @@
 <mat-toolbar color="primary">
     <img src="assets/quc-logo-contraste.png" class="logo-menu" alt="quc logo">
     <h2 fxHide.lt-sm="true"> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</h2>
-    <h5 fxHide.lt-sm="true" class="title-breadcrumb"><a [ngStyle]="{'color': '#fff'}" (click)="logout()">Login</a> » <a [ngStyle]="{'color': '#fff'}" [routerLink]="['../veiculo']">Veículo</a> » Reservar Veículo</h5>
+    <h5 fxHide.lt-sm="true" class="title-breadcrumb"><a [ngStyle]="{'color': '#fff'}" (click)="logout()">Login</a> » <a [ngStyle]="{'color': '#fff'}" [routerLink]="['../../veiculo']">Veículo</a> » Reservar Veículo</h5>
     <span class="example-spacer"></span>
-    <h5 fxHide.lt-sm="true"class="title-breadcrumb">Olá, {{usuariologado}}</h5>
+    <h5 fxHide.lt-sm="true"class="title-breadcrumb">Olá, {{usuariologado.nome}}</h5>
     <button mat-icon-button aria-label="Botao para deslogar do sistema" (click)="logout()">
         <mat-icon>logout</mat-icon>
     </button>
 </mat-toolbar>
+
+<div *ngIf="(veiculoEscolhido)" fxLayout.gt-md="row" fxFlex="100%" fxLayoutAlign.gt-md="space-between stretch" fxLayout="column"
+        fxLayoutAlign="flex-start stretch" fxLayoutGap="20px" fxLayoutGap.gt-md="10%" [ngStyle]="{'padding-left': '65px', 'padding-right': '65px'}">
+    <card [headerCard]="this.headerMetadados">
+      <div [formGroup]="genericDataFormGroup" fxLayoutAlign="center" [style.margin-left]="'10px'" [style.margin-right]="'10px'"
+        fxLayoutGap="30px" fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column">
+        <mat-form-field appearance="outline" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Período de Locação</mat-label>
+          <mat-date-range-input [rangePicker]="picker2">
+            <input matStartDate placeholder="Data Início" (click)="picker2.open()" formControlName="dataInicio">
+            <input matEndDate placeholder="Data Final" (click)="picker2.open()" formControlName="dataFim">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-date-range-picker touchUi="true" maxRange=5 #picker2></mat-date-range-picker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="{{veiculoEscolhido.marca}}" disabled >
+       </mat-form-field>
+       <mat-form-field appearance="outline" floatLabel="always" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Modelo</mat-label>
+          <input matInput placeholder="{{veiculoEscolhido.modelo}}" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Ano</mat-label>
+          <input matInput placeholder="{{veiculoEscolhido.ano}}" disabled >
+        </mat-form-field>
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Cor</mat-label>
+          <input matInput placeholder="{{veiculoEscolhido.cor}}" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="100%" fxFlex.gt-sm="40%">
+          <mat-label>Quilometragem</mat-label>
+          <input matInput placeholder="{{veiculoEscolhido.quilometragem}}" disabled>
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="reserva-btn" (click)="criarReserva()" fxFlex="100%" >Efetuar Reserva</button>
+      </div>
+    </card>
+
+    <div class="card-no-border" fxLayout="column" fxLayoutAlign="start stretch"
+              fxLayoutAlign.lt-sm="space-between stretch" fxFlex="100%" >
+      <card [headerCard]="this.headerGaleria">
+        <img mat-card-image class="imagem" [src]="veiculoEscolhido.imagem" [alt]="veiculoEscolhido.marca" fxFlex="100%">
+      </card>
+    </div>
+</div>

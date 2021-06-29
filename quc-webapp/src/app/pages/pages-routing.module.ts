@@ -14,7 +14,7 @@ const routes: Routes = [
     component: VeiculoComponent
   },
   {
-    path: 'reserva',
+    path: 'reserva/:idVeiculo',
     component: ReservaComponent
   }
 ];

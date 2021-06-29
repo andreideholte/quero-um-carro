@@ -7,8 +7,6 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { MaterialModule } from '../material.module';
 
-
-
 @NgModule({
   declarations: [LoginComponent],
   imports: [

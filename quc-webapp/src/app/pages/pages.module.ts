@@ -7,6 +7,7 @@ import { MessageService, MessageSnackBarComponent } from '../shared/message.serv
 import { VeiculoComponent } from './veiculo/veiculo.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { CardModule } from '../shared/components/card/card.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PagesRoutingModule } from './pages-routing.module';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CardModule
   ],
   providers: [
     MessageService

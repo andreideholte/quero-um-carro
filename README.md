@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" width="90">
+  <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" >
 <br>
 <br>
 Quero um Carro

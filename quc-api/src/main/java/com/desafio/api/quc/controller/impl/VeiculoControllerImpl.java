@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @Api(value = "Veiculo")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:23000")
 @RestController
 public class VeiculoControllerImpl implements VeiculoController {
     

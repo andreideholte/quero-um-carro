@@ -2,12 +2,12 @@ FROM openjdk:8-jdk-slim
 
 RUN mkdir -p /opt/quc/config
 
-ADD application.properties /opt/quc/config
+ADD src/main/resources/application.properties /opt/quc/config
 
-ADD playout-api-1.0.jar /opt/quc
+ADD target/quc.jar /opt/quc
 
 EXPOSE 8000
 
 WORKDIR /opt/quc
 
-CMD ./quc-api-1.0.jar  -Xmx512m
+CMD ./quc.jar  -Xmx512m

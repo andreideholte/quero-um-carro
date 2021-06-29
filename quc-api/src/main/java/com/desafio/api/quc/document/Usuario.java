@@ -23,4 +23,5 @@ public class Usuario {
     @Indexed(unique = true)
     private String email;
     private String nome;
+    
 }

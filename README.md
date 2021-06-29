@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" >
+  <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" width="490">
 <br>
 <br>
 </h1>
@@ -53,4 +53,16 @@ O projeto expõe o mongo express no recurso: http://localhost:8081/db/quc_db/. C
 
 # Screenshots do sistema
 
-
+<h1 align="center">
+<br>
+  <img src="images/login.PNG" alt="login" width="690">
+<br>
+<br>
+  <img src="images/selecao-veiculo.PNG" alt="login" width="690">
+<br>
+<br>
+  <img src="images/reserva.PNG" alt="login" width="690">
+<br>
+<br>
+  <img src="images/tests-api-success.PNG" alt="login" width="690">
+</h1>

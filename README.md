@@ -51,6 +51,17 @@ A API será exposta na url: http://localhost:24000
 
 O projeto expõe o mongo express no recurso: http://localhost:8081/db/quc_db/. Com ele você poderá consultar a base de dados através da interface http.
 
+## Considerações
+
+### CrossOrigin
+
+Os recursos da API estão com crossOrigin para localhost:23000, para a comunicação entre cliente e api funcionar, contudo localhost em crossOrigin não é a melhor abordagem, para deploy em produção o ideal é que se altere.
+
+### Autenticação
+
+Nesse projeto não foi utilizado o oauth como autenticação e autorização. Em um projeto que precisa de segunrança o ideal é que seja implementado spring security na api e uma abordagem seria jwt para comunicação segura entre frontend e backend.
+
+
 # Screenshots do sistema
 
 <h1 align="center">

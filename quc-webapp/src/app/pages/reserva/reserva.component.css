@@ -1,0 +1,117 @@
+:host {
+    display: unset!important;
+}
+
+.title-breadcrumb {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.inline-title{
+    display: flex;
+    flex-direction: row;
+    padding: 0 65px 15px 65px;
+}
+
+.inline-title .mat-icon.mat-icon-inline{
+    font-size: 35px;
+    line-height: 73px;
+    margin-right: 10px;
+}
+
+.title-metadados {
+    font-weight: 100;
+}
+
+.flex {
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    background: var(--secondary);
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 3px 5px 0 rgb(47 85 212 / 30%);
+    color: var(--white);
+    font-size: 60px;
+    line-height: 115px;
+} 
+
+.example-margin {
+    margin: 0 10px;
+}
+
+.example-section {
+    cursor: pointer !important;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+ul.task-items li.item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+}
+
+ul.task-items li.item .nome {
+    display: flex;
+    align-items: center;
+    width: 240px;
+}
+
+ul.task-items li.item .nome .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    line-height: 50px;
+    text-align: center;
+}
+
+ul.task-items li.item .nome .text {
+    margin-left: 20px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+ul.task-items li.item .code {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #2e7d32;
+    width: 145px;
+    margin-left: 30px;
+}
+
+ul.task-items li.item .code .icon {
+    background: #2e7d32;
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+ul.task-items li.item .code .icon.on {
+    background: #2e7d32;
+}
+
+ul.task-items li.item .duracao, 
+ul.task-items li.item .tipo, 
+ul.task-items li.item .tags {
+    width: 144.5px;
+  }

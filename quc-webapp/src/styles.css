@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #221837;
+    --secondary: #711d2c;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --font-family-sans-serif: 'Roboto', -apple-system,BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-sans-serif);
+    font-weight: 700;
+}
+
+.mat-form-field-label-wrapper {
+    margin-left: 10px;
+}
+
+a, a:hover, a:visited {
+    text-decoration: unset;
+}
+
+a:hover {
+    color: var(--gray);
+}
+
+a {
+    color: var(--primary);
+}
+
+.mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-menu {
+    width: 100px;
+}
+
+.mat-toolbar.mat-primary {
+    background: rgb(34,24,55);
+    background: linear-gradient(155deg, rgba(34,24,55,1) 50%, rgba(119,37,61,1) 93%, rgba(110,24,32,1) 100%);
+    color: #fff;
+    padding-right: 65px;
+    padding-left: 65px;
+    margin-bottom: 20px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-flat-button.mat-primary.mat-button-disabled,
+.mat-flat-button.mat-accent.mat-button-disabled,
+.mat-flat-button.mat-warn.mat-button-disabled,
+.mat-flat-button.mat-button-disabled.mat-button-disabled {
+  color: #fff !important;
+}
+
+
+.mat-button-disabled {
+  opacity: 0.6;
+}

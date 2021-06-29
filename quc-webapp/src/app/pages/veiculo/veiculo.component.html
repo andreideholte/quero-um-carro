@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <img src="assets/quc-logo-contraste.png" class="logo-menu" alt="quc logo">
+    <h2 fxHide.lt-sm="true"> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</h2>
+    <h5 fxHide.lt-sm="true"class="title-breadcrumb"><a [ngStyle]="{'color': '#fff'}" (click)="logout()">Login</a> » Veiculo</h5>
+    <span class="example-spacer"></span>
+    <h5 fxHide.lt-sm="true"class="title-breadcrumb">Olá, {{usuariologado}}</h5>
+    <button mat-icon-button aria-label="Botao para deslogar do sistema" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="flex" fxLayout.gt-sm="row wrap" fxLayout="column" fxLayoutAlign.gt-sm="center"
+        fxLayoutAlign="space-between center" fxLayoutGap.gt-sm="2%" fxLayoutGap="15%"
+        [ngStyle.lt-md]="{'margin-top':'80px'}">
+
+      <mat-card class="card" *ngFor="let veiculo of veiculosCollection.veiculos">
+        <img mat-card-image [src]="veiculo.imagem" [alt]="veiculo.marca">
+        <mat-card-content>
+          <p>
+            Modelo: {{veiculo.modelo}}
+          </p>
+          <p>
+            Marca: {{veiculo.marca}}
+          </p>
+          <p>
+            Ano: {{veiculo.ano}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button class="reservar-btn" [routerLink]="['../create', veiculo.id]">Reservar</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

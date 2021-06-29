@@ -31,3 +31,13 @@ services:
       - "24000:8000"
     depends_on:
       - mongo
+
+  portal:
+    build: quc-webapp/.
+    ports:
+      - "23000:4200"
+    mem_limit: 512m
+    restart: always
+    depends_on:
+      - mongo
+      - quc-apui

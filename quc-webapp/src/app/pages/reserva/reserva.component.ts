@@ -95,7 +95,7 @@ export class ReservaComponent implements OnInit {
 
   createForm() {
 		this.genericDataFormGroup = this.fb.group({
-      dataInicio: [moment(new Date()), Validators.required],
+      dataInicio: [moment(new Date()).add(1, 'days'), Validators.required],
       dataFim: [moment(new Date()).add(30, 'days'), Validators.required]
 		});
   }

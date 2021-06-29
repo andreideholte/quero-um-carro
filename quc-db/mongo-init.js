@@ -9,7 +9,7 @@ db.createCollection('reserva');
 db.veiculo.insertMany([
  {
     marca: 'Mitsubishi Motors',
-    modelo: 'Pajero FUll Legend Edition',
+    modelo: 'Pajero Full Legend Edition',
     ano: '2021',
     cor: 'Prata',
     quilometragem: '20445',
@@ -21,7 +21,7 @@ db.veiculo.insertMany([
     ano: '2021',
     cor: 'Preto',
     quilometragem: '12703',
-    imagem: 'https://www.audi.com.br/content/dam/nemo/br/models/A3/2021/sedan/1920x1920-audi-a3-sedan-my2021-1021_retoque.jpg'
+    imagem: 'https://cdn.autopapo.com.br/box/uploads/2021/05/10102238/audi-a3-sedan-2022-preto-scaled.jpg'
   },
   {
     marca: 'Land Rover',
@@ -29,7 +29,7 @@ db.veiculo.insertMany([
     ano: '2021',
     cor: 'Preto',
     quilometragem: '6841',
-    imagem: 'https://www.landrover.com.br/sdlmedia/637329105877167115CF.jpg'
+    imagem: 'https://quatrorodas.abril.com.br/wp-content/uploads/2016/11/5658bd2ecc505d1bd7878b01range-rover-sicilian-yellow-1.jpeg'
   }  
 ]);
 

@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <img src="assets/quc-logo-contraste.png" class="logo-menu" alt="quc logo">
+    <h2 fxHide.lt-sm="true"> &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</h2>
+    <h5 fxHide.lt-sm="true" class="title-breadcrumb"><a [ngStyle]="{'color': '#fff'}" (click)="logout()">Login</a> » <a [ngStyle]="{'color': '#fff'}" [routerLink]="['../veiculo']">Veículo</a> » Reservar Veículo</h5>
+    <span class="example-spacer"></span>
+    <h5 fxHide.lt-sm="true"class="title-breadcrumb">Olá, {{usuariologado}}</h5>
+    <button mat-icon-button aria-label="Botao para deslogar do sistema" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>

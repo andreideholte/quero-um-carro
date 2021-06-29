@@ -1,44 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# README #
 
-## Available Scripts
+Para rodar a aplicação:
 
-In the project directory, you can run:
+> npm ci *(este comando usa o package-lock.json para garantir que as dependências dos ambientes serão as mesmas, caso não sejam, o comando terá uma saída de erro)*
 
-### `yarn start`
+> npm run start *(este comando faz o build e sobe o lite server, um servidor local que expõe a pasta dist/quc-webapp em https, mais detalhes abaixo)*
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+É importante rodar pelo npm run start pois está configurado esse comando no package.json para o ng cli fazer o build concorrentemente com o lite server que vai subir o servidor local através do lite server. O lite server foi utilizado para subir a aplicação localmente no protocolo https. Para alterar alguma configuração do lite server, olhar o arquivo bs-config.js.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Acessar o recurso https da api no browser anteriormente para "liberar o acesso" é necessário.
 
-### `yarn test`
+O build da aplicação fica em dist/quc-webapp, verificar sempre se o bs-config está apontando para o path correto.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ao acessar a página vai ser redirecionado para a autenticação utilizando as credencias do azure.
 
-### `yarn build`
+## Tabela com a versão dos componentes  utilizados nesse projeto
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Component | Version
+---------- | ---------
+Angular | 11.2.6
+Angular CLI | 11.2.5
+Node | 10.16.0
+NPM | 6.12.0
+typescript | 4.0.2
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tabela com a versão de compatibilidade para auxiliar na construção de ambientes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Angular CLI version	| Angular version	| Node.js version	| TypeScript version
+------------------- | --------------- | --------------- | ------------------
+N/A	|	2.x	|	6.0.x or later minor version	|	2.0.x
+1.0.6	| 4.0.x/4.1.x	|	6.9.x or later minor version	|	2.2.x
+1.1.3	| 4.0.x/4.1.x	|	6.9.x or later minor version	|	2.3.x
+1.2.7	| 4.0.x/4.1.x	|	6.9.x or later minor version	|	2.3.x
+1.3.2	| 4.2.x/4.3.x/4.4.x	|	6.9.x or later minor version	|	2.4.x
+1.4.10	| 4.2.x/4.3.x/4.4.x	|	6.9.x/8.9.x or later minor version	|	2.4.x
+1.5.6	| 5.0.x/5.1.x	|	6.9.x/8.9.x or later minor version	|	2.4.x/2.5.x
+1.6.7	| 5.2.x	|	6.9.x/8.9.x or later minor version	|	2.5.x
+1.7.4	|	5.2.x	|	6.9.x/8.9.x or later minor version	|	2.5.x
+6.0.8	|	6.0.x	|	8.9.x or later minor version	|	2.7.x
+6.1.5	|	6.1.x	|	8.9.x or later minor version	|	2.7.x
+6.2.9	|	6.1.x	|	8.9.x or later minor version	|	2.9.x
+7.0.7	|	7.0.x	|	8.9.x/10.9.x or later minor version	|	3.1.x
+7.1.4	|	7.1.x	|	8.9.x/10.9.x or later minor version	|	3.1.x
+7.2.4	|	7.2.x	|	8.9.x/10.9.x or later minor version	|	3.2.x
+7.3.9	|	7.2.x	|	8.9.x/10.9.x or later minor version	|	3.2.x
+8.0.6	|	8.0.x	|	10.9.x or later minor version	|	3.4.x
+8.1.3	|	8.1.x	|	10.9.x or later minor version	|	3.4.x
+8.2.2	|	8.2.x	|	10.9.x or later minor version	|	3.4.x
+8.3.29	|	8.2.x	|	10.9.x or later minor version	|	3.5.x
+9.0.7	|	9.0.x	|	10.13.x/12.11.x or later minor version	|	3.6.x/3.7.x
+9.1.x	|	9.1.x	|	10.13.x/12.11.x or later minor version	|	3.6.x/3.7.x/3.8.x
+10.0.8	|	10.0.x	|	10.13.x/12.11.x or later minor version	|	3.9.x
+10.1.7	|	10.1.x	|	10.13.x/12.11.x or later minor version	|	3.9.x/4.0.x
+10.2.x	|	10.2.x	|	10.13.x/12.11.x or later minor version	|	3.9.x/4.0.x
+11.0.7	|	11.0.x	|	10.13.x/12.11.x or later minor version	|	4.0.x
+11.1.4	|	11.1.x	|	10.13.x/12.11.x or later minor version	|	4.0.x/4.1.x
+11.2.x	|	11.2.x	|	10.13.x/12.11.x or later minor version	|	4.0.x/4.1.x
+12.0.x	|	12.0.x	|	12.13.x/14.15.x or later minor version	|	4.2.x

@@ -9,11 +9,11 @@
     </button>
 </mat-toolbar>
 
-<div class="flex" fxLayout.gt-sm="row wrap" fxLayout="column" fxLayoutAlign.gt-sm="center"
+<div *ngIf="(veiculosCollection)" class="flex" fxLayout.gt-sm="row wrap" fxLayout="column" fxLayoutAlign.gt-sm="center"
         fxLayoutAlign="space-between center" fxLayoutGap.gt-sm="2%" fxLayoutGap="15%"
         [ngStyle.lt-md]="{'margin-top':'80px'}">
 
-      <mat-card class="card" *ngFor="let veiculo of veiculosCollection.veiculos">
+      <mat-card class="card" *ngFor="let veiculo of veiculosCollection?.veiculos">
         <img mat-card-image [src]="veiculo.imagem" [alt]="veiculo.marca">
         <mat-card-content>
           <p>
@@ -27,7 +27,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-stroked-button class="reservar-btn" [routerLink]="['../create', veiculo.id]">Reservar</button>
+          <button mat-stroked-button class="reservar-btn" [routerLink]="['../reserva', veiculo.id]">Reservar</button>
         </mat-card-actions>
       </mat-card>
 </div>

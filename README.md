@@ -3,6 +3,14 @@
   <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" width="490">
 <br>
 <br>
+  
+  <img src="https://img.shields.io/badge/node-v10.16.0-green"> 
+  <img src="https://img.shields.io/badge/typescript-v4.0.2-green">
+  <img src="https://img.shields.io/badge/angular-v11.2.6-green">
+  <img src="https://img.shields.io/badge/angularCLI-v11.2.6-green">
+  <img src="https://img.shields.io/badge/java-v1.8-green">
+  <img src="https://img.shields.io/badge/springboot-v2.5.1-green">
+  <img src="https://img.shields.io/badge/mongoDB-v4.4.6-green">
 </p>
 
 <p align="center">QueroUmCarro [QUC] é um sistema de aluguel de carros, usado como exemplo para implementação da stack angular, springboot e mongodb utilizando swagger, javadoc, logs teste integrados e teste unitários.</p>
@@ -60,20 +68,3 @@ Os recursos da API estão com crossOrigin para localhost:23000, para a comunica�
 ### Autenticação
 
 Nesse projeto não foi utilizado o oauth como autenticação e autorização. Em um projeto que precisa de segunrança o ideal é que seja implementado spring security na api e uma abordagem seria jwt para comunicação segura entre frontend e backend.
-
-
-# Screenshots do sistema
-
-<h1 align="center">
-<br>
-  <img src="images/login.PNG" alt="login" width="690">
-<br>
-<br>
-  <img src="images/selecao-veiculo.PNG" alt="login" width="690">
-<br>
-<br>
-  <img src="images/reserva.PNG" alt="login" width="690">
-<br>
-<br>
-  <img src="images/tests-api-success.PNG" alt="login" width="690">
-</h1>

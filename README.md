@@ -17,9 +17,9 @@
 
 <hr>
 
-# Como buildar o projeto
+# 📦 Como buildar o projeto
 
-## Arquivos de configuração
+## 📝 Arquivos de configuração
 
 Para o projeto webapp o aquivo de configuracao que será utilizado se encontra no diretorio: quc-webapp/src/environments/.
 
@@ -27,7 +27,7 @@ Para a base de dados o script de inicializacão se encontra na pasta: quc-db/mon
 
 Para o projeto da api o arquivo de configuracão se encontra na pasta: quc-api/src/main/resources/application.properties
 
-## Build dos projetos
+## 🛠 Build dos projetos
 
 Execute o comando abaixo em um terminal para gerar o artefato jar da api dentro do diretório _quc-api_.
 
@@ -47,24 +47,24 @@ Volte para a pasta raíz do projeto, nela encontrará um arquivo docker-compose.
 docker-compose -f .\docker-compose.yml -d --build
 ```
 
-## Webapp
+## 🖥️ Webapp
 
 O projeto será exposto na url: http://localhost:23000/
 
-## API
+## ⚙️ API
 
 A API será exposta na url: http://localhost:24000
 
-## Mongo Express
+## 🗃️ Mongo Express
 
 O projeto expõe o mongo express no recurso: http://localhost:8081/db/quc_db/. Com ele você poderá consultar a base de dados através da interface http.
 
-## Considerações
+## 🔎 Considerações
 
-### CrossOrigin
+### 🤝 CrossOrigin
 
 Os recursos da API estão com crossOrigin para localhost:23000, para a comunicação entre cliente e api funcionar, contudo localhost em crossOrigin não é a melhor abordagem, para deploy em produção o ideal é que se altere.
 
-### Autenticação
+### 🔐 Autenticação
 
 Nesse projeto não foi utilizado o oauth como autenticação e autorização. Em um projeto que precisa de segunrança o ideal é que seja implementado spring security na api e uma abordagem seria jwt para comunicação segura entre frontend e backend.

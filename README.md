@@ -1,8 +1,9 @@
 <p align="center">
 <br>
   <img src="quc-webapp/src/assets/quc-logo.png" alt="Quero Um Carro" width="490">
-<br>
-<br>
+  
+  <br>
+  <br>
   
   <img src="https://img.shields.io/badge/node-v10.16.0-green"> 
   <img src="https://img.shields.io/badge/typescript-v4.0.2-green">

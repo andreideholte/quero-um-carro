@@ -45,7 +45,7 @@ npm run build
 Volte para a pasta raíz do projeto, nela encontrará um arquivo docker-compose.yml que pode ser utilizado para buildar o projeto através de containers docker, incluindo a base de dados. Execute o comando abaixo para criar os containers:
 
 ```
-docker-compose -f .\docker-compose.yml -d --build
+docker-compose -f .\docker-compose.yml up -d --build
 ```
 
 ## 🖥️ Webapp

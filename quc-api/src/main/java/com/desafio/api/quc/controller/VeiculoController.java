@@ -8,9 +8,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 public interface VeiculoController {
-    
+
+    /**
+     * 
+     * @return
+     */
     ResponseEntity<VeiculosCollection> listarTodos();
+
+    /**
+     * 
+     * @param veiculo
+     * @return
+     */
     ResponseEntity<Veiculo> criar(@RequestBody final Veiculo veiculo);
+
+    /**
+     * 
+     * @param idVeiculo
+     * @return
+     */
     ResponseEntity<Veiculo> buscarPorId(@PathVariable("id") final String idVeiculo);
 
 }

@@ -6,8 +6,8 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class ReservasCollection implements Serializable {
-    
-    private List<Reserva> reservas;
+public class ReservationCollection implements Serializable {
+
+    private List<Reservation> reservations;
 
 }

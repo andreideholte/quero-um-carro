@@ -9,6 +9,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface AutenticacaoController {
 
-    public ResponseEntity<Usuario> login(@RequestParam("email") final String email, @RequestParam("nome") final String nome) throws UsuarioNaoExisteException, UsuarioDesatualizadoException;
-    
+    /**
+     * Realiza o login de um usuário.
+     *
+     * @param email o email do usuário
+     * @param nome  o nome do usuário
+     * @return a resposta contendo o usuário autenticado
+     * @throws UsuarioNaoExisteException     se o usuário não existir
+     * @throws UsuarioDesatualizadoException se o nome do usuário estiver
+     *                                       desatualizado
+     */
+    public ResponseEntity<Usuario> login(@RequestParam("email") final String email,
+            @RequestParam("nome") final String nome) throws UsuarioNaoExisteException, UsuarioDesatualizadoException;
+
 }

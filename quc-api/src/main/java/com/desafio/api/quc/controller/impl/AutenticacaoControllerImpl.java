@@ -35,33 +35,34 @@ public class AutenticacaoControllerImpl implements AutenticacaoController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-	
+
 	@Override
 	@ApiOperation(value = "Autenticacao")
 	@GetMapping(value = "/auth/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("nome") String nome) throws UsuarioNaoExisteException, UsuarioDesatualizadoException {
-        LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Iniciando Processo de login.");
+	public ResponseEntity<Usuario> login(@RequestParam("email") String email, @RequestParam("nome") String nome)
+			throws UsuarioNaoExisteException, UsuarioDesatualizadoException {
+		LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Iniciando Processo de login.");
 
-        Usuario usuarioAutenticado = autenticacaoService.autenticar(email, nome); 
+		Usuario usuarioAutenticado = autenticacaoService.autenticar(email, nome);
 
-        LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Finalizado Processo de login.");
+		LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Finalizado Processo de login.");
 
-        return new ResponseEntity<>(usuarioAutenticado, HttpStatus.OK);
+		return new ResponseEntity<>(usuarioAutenticado, HttpStatus.OK);
 	}
 
 	@ExceptionHandler(UsuarioNaoExisteException.class)
-    public ResponseEntity<Usuario> usuarioNaoExiste(WebRequest webRequest, Exception exception) {
+	public ResponseEntity<Usuario> usuarioNaoExiste(WebRequest webRequest, Exception exception) {
 		Usuario usuario = new Usuario(null, webRequest.getParameter("email"), webRequest.getParameter("nome"));
-		
+
 		usuario = usuarioService.criar(usuario);
 
 		LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Finalizado Processo de login.");
 
-        return new ResponseEntity<>(usuario, HttpStatus.CREATED);
-    }
+		return new ResponseEntity<>(usuario, HttpStatus.CREATED);
+	}
 
 	@ExceptionHandler(UsuarioDesatualizadoException.class)
-    public ResponseEntity<Usuario> usuarioDesatualizado(WebRequest webRequest, Exception exception) {
+	public ResponseEntity<Usuario> usuarioDesatualizado(WebRequest webRequest, Exception exception) {
 		Usuario usuario = usuarioService.buscarPorEmail(webRequest.getParameter("email"));
 		usuario.setNome(webRequest.getParameter("nome"));
 
@@ -69,14 +70,14 @@ public class AutenticacaoControllerImpl implements AutenticacaoController {
 
 		LOGGER.info("[AUTENTICACAO-CONTROLLER-IMPL][Login] Finalizado Processo de login.");
 
-        return new ResponseEntity<>(usuario, HttpStatus.OK);
-    }
+		return new ResponseEntity<>(usuario, HttpStatus.OK);
+	}
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> erroInterno(WebRequest webRequest, Exception exception) {
-        LOGGER.error("[AUTENTICACAO-CONTROLLER-IMPL][Login] Erro na autenticacao do Usuario.");
-        LOGGER.error(exception);
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> erroInterno(WebRequest webRequest, Exception exception) {
+		LOGGER.error("[AUTENTICACAO-CONTROLLER-IMPL][Login] Erro na autenticacao do Usuario.");
+		LOGGER.error(exception);
 
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-  }
+		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+}
